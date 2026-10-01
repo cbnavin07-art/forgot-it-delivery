@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Forgot-It | Fast Local Delivery</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    color:#172033;
+}
+
+header{
+    background:#ffffff;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #e5e7eb;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    color:#2563eb;
+}
+
+nav a{
+    margin-left:25px;
+    text-decoration:none;
+    color:#333;
+    font-weight:600;
+}
+
+.hero{
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    color:white;
+    padding:80px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+}
+
+.hero-text{
+    max-width:650px;
+}
+
+.hero h1{
+    font-size:55px;
+    line-height:1.05;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    line-height:1.6;
+    margin-bottom:30px;
+}
+
+.btn{
+    border:none;
+    background:#fff;
+    color:#2563eb;
+    padding:15px 25px;
+    border-radius:10px;
+    font-size:17px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.hero-card{
+    background:white;
+    color:#172033;
+    padding:30px;
+    border-radius:20px;
+    width:320px;
+    box-shadow:0 20px 50px rgba(0,0,0,.2);
+}
+
+.hero-card h3{
+    margin-bottom:20px;
+}
+
+.hero-card div{
+    background:#f1f5f9;
+    padding:15px;
+    border-radius:10px;
+    margin:10px 0;
+}
+
+section{
+    padding:65px 7%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.title h2{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.service{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 5px 25px rgba(0,0,0,.07);
+}
+
+.service .icon{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.service h3{
+    margin-bottom:10px;
+}
+
+.service p{
+    color:#667085;
+    line-height:1.6;
+}
+
+.order-box{
+    max-width:650px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 5px 30px rgba(0,0,0,.08);
+}
+
+input,select,textarea{
+    width:100%;
+    padding:14px;
+    margin:8px 0 16px;
+    border:1px solid #d0d5dd;
+    border-radius:9px;
+    font-size:15px;
+}
+
+label{
+    font-weight:600;
+}
+
+.submit{
+    width:100%;
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:9px;
+    font-size:17px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+#result{
+    margin-top:20px;
+    padding:15px;
+    background:#ecfdf3;
+    color:#087443;
+    border-radius:10px;
+    display:none;
+}
+
+.tracking{
+    background:#111827;
+    color:white;
+    text-align:center;
+}
+
+.tracking-box{
+    max-width:550px;
+    margin:auto;
+}
+
+.track-btn{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:14px 25px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+#trackResult{
+    margin-top:20px;
+    font-size:18px;
+}
+
+.faq{
+    max-width:800px;
+    margin:auto;
+}
+
+details{
+    background:white;
+    margin:12px 0;
+    padding:20px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+summary{
+    font-weight:700;
+}
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+@media(max-width:800px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .services{
+        grid-template-columns:1fr;
+    }
+
+    nav{
+        display:none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🚀 Forgot-It</div>
+
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#order">Book</a>
+        <a href="#tracking">Track</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-text">
+        <h1>Forgot something?<br>We'll get it to you.</h1>
+
+        <p>
+            Fast and affordable local pickup & delivery.
+            Send books, documents, keys, food, parcels and
+            important everyday items across your city.
+        </p>
+
+        <button class="btn" onclick="document.getElementById('order').scrollIntoView()">
+            🚀 Book a Delivery
+        </button>
+    </div>
+
+    <div class="hero-card">
+        <h3>⚡ Quick Delivery</h3>
+
+        <div>📦 Pickup from your location</div>
+        <div>🛵 Local delivery partner</div>
+        <div>📍 Live order tracking</div>
+        <div>💰 Affordable pricing</div>
+    </div>
+
+</section>
+
+
+<section id="services">
+
+    <div class="title">
+        <h2>What can we deliver?</h2>
+        <p>Simple everyday deliveries made easy.</p>
+    </div>
+
+    <div class="services">
+
+        <div class="service">
+            <div class="icon">📚</div>
+            <h3>Books & Documents</h3>
+            <p>
+                Forgot your books, files or important documents?
+                We'll pick them up and deliver them.
+            </p>
+        </div>
+
+        <div class="service">
+            <div class="icon">🔑</div>
+            <h3>Keys & Essentials</h3>
+            <p>
+                Keys, chargers, wallets and other important
+                everyday items.
+            </p>
+        </div>
+
+        <div class="service">
+            <div class="icon">📦</div>
+            <h3>Small Parcels</h3>
+            <p>
+                Send small packages quickly within your city.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="order">
+
+    <div class="title">
+        <h2>Book a Delivery</h2>
+        <p>Enter your pickup and delivery details.</p>
+    </div>
+
+    <div class="order-box">
+
+        <form onsubmit="createOrder(event)">
+
+            <label>Your Name</label>
+            <input id="name" type="text" placeholder="Enter your name" required>
+
+            <label>Phone Number</label>
+            <input id="phone" type="tel" placeholder="Enter phone number" required>
+
+            <label>Pickup Location</label>
+            <input id="pickup" type="text" placeholder="Where should we collect it?" required>
+
+            <label>Delivery Location</label>
+            <input id="drop" type="text" placeholder="Where should we deliver it?" required>
+
+            <label>Item</label>
+            <select id="item">
+                <option>Books</option>
+                <option>Documents</option>
+                <option>Keys</option>
+                <option>Food</option>
+                <option>Small Parcel</option>
+                <option>Other</option>
+            </select>
+
+            <label>Delivery Time</label>
+            <select id="time">
+                <option>Within 1 hour</option>
+                <option>Within 2 hours</option>
+                <option>Same day</option>
+            </select>
+
+            <button class="submit" type="submit">
+                🚀 Create Delivery Request
+            </button>
+
+        </form>
+
+        <div id="result"></div>
+
+    </div>
+
+</section>
+
+
+<section class="tracking" id="tracking">
+
+    <div class="title">
+        <h2>Track Your Delivery</h2>
+        <p>Enter your order ID.</p>
+    </div>
+
+    <div class="tracking-box">
+
+        <input id="orderId" placeholder="Example: FI1001">
+
+        <button class="track-btn" onclick="trackOrder()">
+            🔎 Track Order
+        </button>
+
+        <div id="trackResult"></div>
+
+    </div>
+
+</section>
+
+
+<section id="faq">
+
+    <div class="title">
+        <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq">
+
+        <details>
+            <summary>How does Forgot-It work?</summary>
+            <p>
+                Enter your pickup and delivery locations.
+                A delivery partner can collect the item and deliver it.
+            </p>
+        </details>
+
+        <details>
+            <summary>What items can I send?</summary>
+            <p>
+                Books, documents, keys, food and suitable small parcels.
+            </p>
+        </details>
+
+        <details>
+            <summary>How much does delivery cost?</summary>
+            <p>
+                Pricing can depend on distance, item size and delivery speed.
+            </p>
+        </details>
+
+        <details>
+            <summary>Can I track my order?</summary>
+            <p>
+                Yes. Enter your order ID in the tracking section.
+            </p>
+        </details>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <h3>🚀 Forgot-It</h3>
+
+    <p>
+        Fast local delivery for everyday problems.
+    </p>
+
+    <br>
+
+    <p>© 2026 Forgot-It. All rights reserved.</p>
+
+</footer>
+
+
+<script>
+
+function createOrder(event){
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+
+    const orderNumber =
+        "FI" + Math.floor(1000 + Math.random() * 9000);
+
+    const result = document.getElementById("result");
+
+    result.style.display = "block";
+
+    result.innerHTML =
+        "✅ Delivery request created!<br><br>" +
+        "Hello " + name + "!<br>" +
+        "Your Order ID is <strong>" +
+        orderNumber +
+        "</strong><br><br>" +
+        "Save this ID to track your delivery.";
+
+}
+
+
+function trackOrder(){
+
+    const id = document.getElementById("orderId").value;
+
+    const result = document.getElementById("trackResult");
+
+    if(id.trim() === ""){
+
+        result.innerHTML =
+            "⚠️ Please enter an Order ID.";
+
+        return;
+
+    }
+
+    result.innerHTML =
+        "📦 Order <strong>" +
+        id +
+        "</strong><br><br>" +
+        "🟢 Order received<br>" +
+        "🟡 Delivery partner assignment pending<br>" +
+        "⚪ Pickup pending";
+
+}
+
+</script>
+
+</body>
+</html>
